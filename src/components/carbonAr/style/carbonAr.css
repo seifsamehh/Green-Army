@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+  .carbon-ar .upper {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .carbon-ar h1 {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=carbonAr.css.map */

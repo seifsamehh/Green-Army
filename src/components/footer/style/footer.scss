@@ -1,0 +1,63 @@
+// start global variables
+$light: #fff;
+$dark: #000;
+$green: #71c373;
+// end global variables
+footer {
+    background-color: $green;
+    cursor: default;
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+    .left {
+        img {
+            width: 30%;
+            @media screen and (max-width: 768px) {
+                width: 50%;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .middle {
+        p {
+            a {
+                cursor: pointer !important;
+            }
+        }
+        .underline{
+            position: relative;
+            text-decoration: none;
+          }
+          
+          .underline::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: $light;
+            transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+          }
+          
+          @media (hover: hover) and (pointer: fine) {
+            .underline:hover::before{
+              left: 0;
+              right: auto;
+              width: 100%;
+            }
+          }
+    }
+    .right {
+        a {
+            cursor: pointer !important;
+        }
+        @media screen and (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

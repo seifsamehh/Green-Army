@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;400;600;700&display=swap");
+.headerAr {
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .headerAr {
+    flex-direction: column-reverse;
+  }
+}
+.headerAr img {
+  width: 8%;
+}
+@media screen and (max-width: 768px) {
+  .headerAr nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.headerAr nav .link {
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.headerAr nav .link::before,
+.headerAr nav .link::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #71c373;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.headerAr nav .link::before {
+  content: "";
+  /* show by default */
+}
+.headerAr nav .link--elara {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .headerAr nav .link--elara {
+    font-size: 1.1rem !important;
+  }
+}
+.headerAr nav .link--elara::before {
+  transform-origin: 50% 100%;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.3s;
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.3s;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+}
+.headerAr nav .link--elara:hover::before {
+  transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+}
+.headerAr nav .link--elara span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+.headerAr nav .link--elara:hover span {
+  transform: translate3d(0, -2px, 0);
+}/*# sourceMappingURL=headerAr.css.map */

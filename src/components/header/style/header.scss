@@ -1,0 +1,65 @@
+// start global variables
+$light: #fff;
+$dark: #000;
+$green: #71c373;
+// end global variables
+header {
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+    }
+    img {
+        width: 8%;
+        @media screen and (max-width: 768px) {
+            width: 30% !important;
+        }
+    }
+    nav {
+        @media screen and (max-width: 768px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        span {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+            position: relative;
+            white-space: nowrap;
+        }
+        span::before,
+        span::after {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: $green;
+            top: 100%;
+            left: 0;
+            pointer-events: none;
+        }
+        span::before {
+            content: '';
+            /* show by default */
+        }
+        span {
+            font-size: 1.3rem;
+            @media screen and (max-width: 768px) {
+                font-size: 1.1rem !important;
+            }
+        }
+        span::before {
+            transform-origin: 50% 100%;
+            transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        span:hover::before {
+            transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+        }
+        span span {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+        }
+        span:hover span {
+            transform: translate3d(0, -2px, 0);
+        }
+    }
+}

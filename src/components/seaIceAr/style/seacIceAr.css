@@ -1,0 +1,75 @@
+@media screen and (max-width: 768px) {
+  .sea-ice-ar .heading {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sea-ice-ar .heading nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 3rem;
+  }
+}
+.sea-ice-ar .heading nav .active {
+  color: #71c373;
+}
+.sea-ice-ar .heading nav .link {
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  white-space: nowrap;
+}
+.sea-ice-ar .heading nav .link::before,
+.sea-ice-ar .heading nav .link::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #71c373;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+.sea-ice-ar .heading nav .link::before {
+  content: "";
+  /* show by default */
+}
+.sea-ice-ar .heading nav .link--elara {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .sea-ice-ar .heading nav .link--elara {
+    font-size: 1.1rem !important;
+  }
+}
+.sea-ice-ar .heading nav .link--elara::before {
+  transform-origin: 50% 100%;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.3s;
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.3s;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+}
+.sea-ice-ar .heading nav .link--elara:hover::before {
+  transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+}
+.sea-ice-ar .heading nav .link--elara span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+.sea-ice-ar .heading nav .link--elara:hover span {
+  transform: translate3d(0, -2px, 0);
+}
+@media screen and (max-width: 768px) {
+  .sea-ice-ar .upper {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sea-ice-ar h1 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+}/*# sourceMappingURL=seacIceAr.css.map */

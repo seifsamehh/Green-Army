@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+// start global variables
+$light: #fff;
+$dark: #000;
+$green: #71c373;
+// end global variables
+// start global components
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+main {
+  min-height: 100vh;
+  background-image: url("./images/bbblurry.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+a,
+video,
+img,
+button,
+h1,
+.title {
+  user-select: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  line-height: 2;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+}
+h1,
+h2 {
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+}
+h1,
+h2,
+a {
+  font-family: "Permanent Marker", cursive;
+}
+img:not(.logo) {
+  border: 3px dashed $light;
+  padding: 1rem;
+}
+::selection {
+  background-color: $green;
+  color: $light;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+::placeholder {
+  color: $light !important;
+}
+#dark {
+  background-color: $dark;
+  color: $light;
+}
+#light {
+  background-color: $light;
+  color: $dark;
+  background-image: url("./images/bbblurry2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.7);
+  }
+}
+#light {
+  #app {
+    color: $green;
+  }
+}
+#light {
+  .page-intro,
+  .page-intro-ar {
+    .cafe-inner,
+    .mozart-inner {
+      -webkit-text-stroke-color: $green;
+    }
+    .image {
+      border-color: $green;
+    }
+  }
+}
+#light {
+  .abstract,
+  .abstract-ar,
+  .intro,
+  .intro-ar {
+    .left-part {
+      h1 {
+        color: $green;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $green;
+      }
+    }
+    .right-part {
+      p {
+        @media screen and (max-width: 768px) {
+          color: $light;
+        }
+      }
+    }
+  }
+}
+#light {
+  .causes,
+  .causes-ar {
+    .upper-part,
+    .footer-part {
+      .content {
+        h2 {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+#light {
+  .team,
+  .team-ar {
+    .cards {
+      .card {
+        background-color: $light;
+        .contentBx {
+          h2 {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+#light {
+  .faq,
+  .faq-ar {
+    background-image: url("./images/blob-scene-haikei-2.svg");
+    .button {
+      color: $light;
+    }
+    .button::before {
+      background-color: $green;
+    }
+  }
+}
+#light {
+  .search {
+    input {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      outline: none;
+      background: rgba(0, 0, 0, 0.4);
+      color: #f8f8f8;
+    }
+  }
+  .bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+// start loader
+.loading {
+  h1 {
+    color: $light;
+    margin-top: 6rem;
+    font-size: 3rem;
+    font-weight: 100;
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      margin-top: 7rem;
+    }
+  }
+  canvas {
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+// end loader
+// start switch
+.switch {
+  font-size: 17px;
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  width: 3.5em;
+  height: 2em;
+  z-index: 20;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $green;
+  transition: 0.5s;
+  border-radius: 30px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px $light;
+  background: $green;
+  transition: 0.5s;
+}
+input:checked + .slider {
+  background-color: $green;
+}
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px $light;
+}
+// end switch
+// start offline
+.offline {
+  background-color: $green;
+  h1 {
+    font-size: 3rem;
+    color: $light;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $light;
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+  q,
+  p {
+    font-size: 1.3rem;
+    color: $light;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+// end offline
+// end global components
