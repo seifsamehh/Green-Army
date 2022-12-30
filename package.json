@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@splinetool/react-spline": "^2.2.3",
+    "@splinetool/react-spline": "^2.2.5",
     "@splinetool/runtime": "^0.9.148",
     "axios": "^1.2.1",
     "framer-motion": "^7.3.6",
